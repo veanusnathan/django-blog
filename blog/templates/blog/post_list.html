@@ -12,30 +12,14 @@
       </h1>
     </header>
 
+    {% for post in posts %}
     <article>
-      <time>published: 14.06.2014, 12:14</time>
+      <time>published: {{post.published_date}}</time>
       <h2>
-        <a href="">My first post</a>
+        <a href="">{{post.title}}</a>
       </h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus impedit
-        odio sunt hic corrupti repudiandae harum odit modi, praesentium
-        doloribus voluptatum commodi omnis distinctio eveniet maiores aliquam
-        nobis aliquid optio.
-      </p>
+      <p>{{post.text|linebreaksbr}}</p>
     </article>
-
-    <article>
-      <time>published: 14.06.2014, 12:14</time>
-      <h2>
-        <a href="">My second post</a>
-      </h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus impedit
-        odio sunt hic corrupti repudiandae harum odit modi, praesentium
-        doloribus voluptatum commodi omnis distinctio eveniet maiores aliquam
-        nobis aliquid optio.
-      </p>
-    </article>
+    {% endfor %}
   </body>
 </html>
